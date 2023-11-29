@@ -118,7 +118,7 @@ contract iTicketing is ERC721, ERC721URIStorage {
         ////////////////////////////////////////////////////
 
 
-       function supportsInterface(bytes4 interfaceId) public view virtual override( ERC721) returns (bool) {
+       function supportsInterface(bytes4 interfaceId) public view virtual override( ERC721URIStorage,ERC721) returns (bool) {
         return super.supportsInterface(interfaceId);
         }
 
@@ -225,7 +225,7 @@ contract iTicketing is ERC721, ERC721URIStorage {
 
 
         function tokenURI(uint256 tokenId) public view override(ERC721URIStorage, ERC721) returns (string memory) {
-            _requireMinted(tokenId);
+            
 
             string memory _tokenURI = _tokenURIs[tokenId];
             string memory base = _baseURI();
@@ -242,7 +242,7 @@ contract iTicketing is ERC721, ERC721URIStorage {
             return super.tokenURI(tokenId);
         }
 
-        function _burn(uint256 tokenId) internal override(ERC721URIStorage, ERC721) {
+        function _burn(uint256 tokenId) internal override( ERC721) {
             super._burn(tokenId);
 
             if (bytes(_tokenURIs[tokenId]).length != 0) {
@@ -320,4 +320,3 @@ contract iTicketing is ERC721, ERC721URIStorage {
        
         receive() external payable {}
 }
-
