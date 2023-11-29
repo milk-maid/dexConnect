@@ -64,3 +64,6 @@ $ forge --help
 $ anvil --help
 $ cast --help
 ```
+dexconnect
+-(ticketFactory_contract_Address)[https://goerli.basescan.org/address/0xe8569787279241f6a5f3cbf21dcbc655e53a7f1b]
+poap contract Address https://goerli.basescan.org/address/0x3d6d20896b945e947b962a8c043e09c522504079

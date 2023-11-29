@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity 0.8.15;
+pragma solidity ^0.8.15;
 
 import "forge-std/Script.sol";
 import "../src/ticket.sol";
@@ -13,12 +13,12 @@ contract TicketScript is Script {
 
     address[] attenders = [0xBd032b770f364605BfE8D16E27ae4D241b9061c8];
     function run() public {
-        address deployer = 0xc6d123c51c7122d0b23e8B6ff7eC10839677684d;
-        address eventAdmin = 0x49207A3567EF6bdD0bbEc88e94206f1cf53c5AfC;
-        address user = 0xBd032b770f364605BfE8D16E27ae4D241b9061c8;
+        address deployer = 0x7A1c3b09298C227D910E90CD55985300bd1032F3;
+        address eventAdmin = 0x7A1c3b09298C227D910E90CD55985300bd1032F3;
+        address user = 0xA3014F25945ae21119cecbea96056E826B6ae19B;
         uint256 deployerKey = vm.envUint("PRIVATE_KEY");
-        uint256 eventAdminKey = vm.envUint("PRIVATE_KEY3");
-        uint256 userKey = vm.envUint("PRIVATE_KEY4");
+        uint256 eventAdminKey = vm.envUint("PRIVATE_KEY");
+        uint256 userKey = vm.envUint("PRIVATE_KEY3");
 
         vm.startBroadcast(deployerKey);
         ticketFactory = new TicketFactory(deployer);
